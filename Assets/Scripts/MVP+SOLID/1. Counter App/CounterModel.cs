@@ -9,12 +9,14 @@ public sealed class CounterModel : ICounterModel
 
     public int Max { get; }
 
+    int startValue;
 
     public CounterModel(int min, int max, int startValue = 0)
     {
         Count = startValue;
         Min = min;
         Max = max;
+        this.startValue = startValue;
     }
 
     public bool CanIncrement() => Count < Max;
@@ -38,7 +40,7 @@ public sealed class CounterModel : ICounterModel
 
     public void Reset()
     {
-        Count = 0;
+        Count = startValue;
         Count = Math.Clamp(Count, Min, Max);
     }
 }
