@@ -15,7 +15,6 @@ public interface IStopwatchView
     void SetPauseInteractable(bool isInteractable);
     void SetResumeInteractable(bool isInteractable);
     void SetResetInteractable(bool isInteractable);
-
-    void SetStaus(string status);
+    void SetStatus(string status);
 
 }
